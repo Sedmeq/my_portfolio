@@ -16,7 +16,7 @@ const Footer = () => {
               <a
                 key={label}
                 href={href}
-                className="p-3 rounded-full card-gradient hover:glow-accent transition-all duration-300 hover:scale-110"
+                className="p-3 rounded-full bg-card border border-border hover:bg-muted transition-all duration-300 hover:scale-110"
                 aria-label={label}
               >
                 <Icon className="w-5 h-5" />

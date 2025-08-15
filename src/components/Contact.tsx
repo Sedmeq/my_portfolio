@@ -36,7 +36,7 @@ const Contact = () => {
     <section id="contact" className="py-20 px-6 bg-secondary/20">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
             Let's Work Together
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -58,14 +58,14 @@ const Contact = () => {
             <div className="space-y-6">
               {contactInfo.map(({ icon: Icon, title, value, href }) => (
                 <div key={title} className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                    <Icon className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center">
+                    <Icon className="w-6 h-6 text-foreground" />
                   </div>
                   <div>
                     <p className="font-medium">{title}</p>
                     <a 
                       href={href} 
-                      className="text-muted-foreground hover:text-accent transition-colors"
+                      className="text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {value}
                     </a>
@@ -75,7 +75,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <Card className="card-gradient border-0">
+          <Card className="bg-card border border-border">
             <CardHeader>
               <CardTitle>Send me a message</CardTitle>
               <CardDescription>
@@ -111,7 +111,7 @@ const Contact = () => {
                     required 
                   />
                 </div>
-                <Button type="submit" className="w-full glow-primary">
+                <Button type="submit" className="w-full bg-foreground text-background hover:bg-foreground/90">
                   Send Message
                 </Button>
               </form>

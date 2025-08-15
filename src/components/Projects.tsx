@@ -35,7 +35,7 @@ const Projects = () => {
     <section id="projects" className="py-20 px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
             Featured Projects
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -47,7 +47,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={project.title} 
-              className="card-gradient border-0 overflow-hidden hover:glow-primary transition-all duration-500 hover:scale-105 group"
+              className="bg-card border border-border overflow-hidden hover:bg-muted transition-all duration-500 hover:scale-105 group"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <div className="relative overflow-hidden">

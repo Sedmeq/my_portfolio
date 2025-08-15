@@ -24,7 +24,7 @@ const About = () => {
     <section id="about" className="py-20 px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
             About Me
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -38,12 +38,12 @@ const About = () => {
           {features.map(({ icon: Icon, title, description }, index) => (
             <Card 
               key={title} 
-              className="card-gradient border-0 hover:glow-primary transition-all duration-500 hover:scale-105"
+              className="bg-card border border-border hover:bg-muted transition-all duration-500 hover:scale-105"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/20 flex items-center justify-center">
-                  <Icon className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-muted flex items-center justify-center">
+                  <Icon className="w-8 h-8 text-foreground" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4">{title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{description}</p>
