@@ -28,10 +28,7 @@ const About = () => {
             About Me
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            I'm a passionate developer with 5+ years of experience building web applications. 
-            I love turning complex problems into simple, beautiful designs and writing clean, 
-            efficient code that makes a difference.
-          </p>
+          I'm a passionate software developer who loves tackling challenges and turning ideas into real solutions. I enjoy learning new technologies, improving my skills, and collaborating with others to create impactful projects.          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-16">

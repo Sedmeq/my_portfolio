@@ -25,11 +25,11 @@ const Footer = () => {
           </div>
           
           <p className="text-muted-foreground flex items-center justify-center gap-2">
-            Made with <Heart className="w-4 h-4 text-red-500 fill-current" /> by Said Mammadov
+            Made with <Heart className="w-4 h-4 text-black fill-current" /> by Said Mammadov
           </p>
           
           <p className="text-sm text-muted-foreground/70 mt-2">
-            © 2024 All rights reserved.
+            © 2025 All rights reserved.
           </p>
         </div>
       </div>
