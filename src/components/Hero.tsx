@@ -24,7 +24,7 @@ const Hero = () => {
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-foreground tracking-tight">
-            John Doe
+            Said Mammadov
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed font-light">
@@ -57,9 +57,9 @@ const Hero = () => {
           
           <div className="flex justify-center space-x-6 mb-16">
             {[
-              { icon: Github, href: '#', label: 'GitHub' },
-              { icon: Linkedin, href: '#', label: 'LinkedIn' },
-              { icon: Mail, href: '#', label: 'Email' }
+              { icon: Github, href: 'https://github.com/Sedmeq', label: 'GitHub' },
+              { icon: Linkedin, href: 'https://www.linkedin.com/in/seid-mammedov', label: 'LinkedIn' },
+              { icon: Mail, href: 'mailto:saidmammadov32@gmail.com', label: 'Email' }
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}

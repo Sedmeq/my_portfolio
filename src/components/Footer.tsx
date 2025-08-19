@@ -2,9 +2,9 @@ import { Github, Linkedin, Mail, Heart } from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Mail, href: '#', label: 'Email' }
+    { icon: Github, href: 'https://github.com/Sedmeq', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/seid-mammedov', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:saidmammadov32@gmail.com', label: 'Email' }
   ];
 
   return (
@@ -25,7 +25,7 @@ const Footer = () => {
           </div>
           
           <p className="text-muted-foreground flex items-center justify-center gap-2">
-            Made with <Heart className="w-4 h-4 text-red-500 fill-current" /> by John Doe
+            Made with <Heart className="w-4 h-4 text-red-500 fill-current" /> by Said Mammadov
           </p>
           
           <p className="text-sm text-muted-foreground/70 mt-2">

@@ -17,6 +17,10 @@ const Navigation = () => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
   };
+  
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -24,7 +28,12 @@ const Navigation = () => {
     }`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-xl font-bold text-gradient">Portfolio</h2>
+          <h2
+            className="text-xl font-bold text-foreground hover:text-primary transition-colors cursor-pointer"
+            onClick={scrollToTop}
+          >
+            Portfolio
+          </h2>
           
           <div className="hidden md:flex space-x-8">
             {['about', 'skills', 'projects', 'contact'].map((section) => (

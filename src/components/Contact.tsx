@@ -4,32 +4,40 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Mail, MapPin, Phone } from 'lucide-react';
+import { useState } from 'react';
 
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [status, setStatus] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mblkvrkb", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setStatus("SUCCESS");
+        form.reset();
+      } else {
+        setStatus("ERROR");
+      }
+    } catch (err) {
+      setStatus("ERROR");
+    }
   };
 
   const contactInfo = [
-    {
-      icon: Mail,
-      title: 'Email',
-      value: 'john.doe@example.com',
-      href: 'mailto:john.doe@example.com'
-    },
-    {
-      icon: Phone,
-      title: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
-    },
-    {
-      icon: MapPin,
-      title: 'Location',
-      value: 'San Francisco, CA',
-      href: '#'
-    }
+    { icon: Mail, title: 'Email', value: 'saidmammadov32@gmail.com', href: 'mailto:saidmammadov32@gmail.com' },
+    { icon: Phone, title: 'Phone', value: '+994 10-717-32-00', href: 'tel:+994107173200' },
+    { icon: MapPin, title: 'Location', value: 'Baku, Azerbaijan', href: 'https://www.google.com/maps/place/Baku,+Azerbaijan' }
   ];
 
   return (
@@ -63,10 +71,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium">{title}</p>
-                    <a 
-                      href={href} 
-                      className="text-muted-foreground hover:text-foreground transition-colors"
-                    >
+                    <a href={href} className="text-muted-foreground hover:text-foreground transition-colors">
                       {value}
                     </a>
                   </div>
@@ -87,33 +92,39 @@ const Contact = () => {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="John" required />
+                    <Input name="firstName" id="firstName" placeholder="John" required />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Doe" required />
+                    <Input name="lastName" id="lastName" placeholder="Doe" required />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="john@example.com" required />
+                  <Input name="email" id="email" type="email" placeholder="john@example.com" required />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="subject">Subject</Label>
-                  <Input id="subject" placeholder="Project inquiry" required />
+                  <Input name="subject" id="subject" placeholder="Project inquiry" required />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="Tell me about your project..." 
-                    rows={6}
-                    required 
-                  />
+                  <Textarea name="message" id="message" placeholder="Tell me about your project..." rows={6} required />
                 </div>
                 <Button type="submit" className="w-full bg-foreground text-background hover:bg-foreground/90">
                   Send Message
                 </Button>
+
+                {status === "SUCCESS" && (
+                  <p className="text-green-600 text-center mt-4">
+                    ✅ Thanks! Your message has been sent.
+                  </p>
+                )}
+                {status === "ERROR" && (
+                  <p className="text-red-600 text-center mt-4">
+                    ❌ Oops! Something went wrong.
+                  </p>
+                )}
               </form>
             </CardContent>
           </Card>
