@@ -66,9 +66,10 @@ const Contact = () => {
             <div className="space-y-6">
               {contactInfo.map(({ icon: Icon, title, value, href }) => (
                 <div key={title} className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center">
-                    <Icon className="w-6 h-6 text-foreground" />
+                  <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center overflow-hidden">
+                      <Icon className="w-8 h-8 text-foreground" />
                   </div>
+
                   <div>
                     <p className="font-medium">{title}</p>
                     <a href={href} className="text-muted-foreground hover:text-foreground transition-colors">

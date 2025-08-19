@@ -2,32 +2,35 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Github } from 'lucide-react';
+import image_1 from '@/images/image_1.png';
+import image_2 from '@/images/image_2.png';
+import image_3 from '@/images/image_3.png'; 
 
 const Projects = () => {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with real-time inventory management, payment processing, and admin dashboard.',
-      tech: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
-      github: '#',
-      live: '#',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop'
+      title: 'Order Management System',
+      description: '🏪 ASP.NET Core 8.0 MVC order management system with role-based access (Admin/Accountant/Cashier), product catalog, multi-item orders, real-time calculations & comprehensive user authentication using Entity Framework & SQL Server.',
+      tech: ['ASP.NET Core 8.0 MVC', 'SQL Server', 'Entity Framework Core', 'ASP.NET Core Identity', 'Bootstrap 5'],
+      github: 'https://github.com/Sedmeq/OrderManagementSystem.git',
+      live: 'https://github.com/Sedmeq/OrderManagementSystem.git',
+      image: image_1
     },
     {
-      title: 'Task Management App',
-      description: 'Collaborative project management tool with real-time updates, team communication, and progress tracking.',
-      tech: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind'],
-      github: '#',
-      live: '#',
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop'
+      title: 'Job Portal System',
+      description: 'This project allows employers to create job posts under specific categories, share detailed information about their companies, and manage listings. Job seekers can browse job vacancies, apply to open positions, and track the jobs they have applied to.',
+      tech: ['Java 17', 'Spring Boot', 'PostgreSQL', 'Gradle', 'JWT', 'Swagger UI', 'JUnit', 'Lombok' , 'Docker'],
+      github: 'https://github.com/Sedmeq/Job_Portal_System.git',
+      live: 'https://github.com/Sedmeq/Job_Portal_System.git',
+      image: image_2
     },
     {
-      title: 'AI Chat Interface',
-      description: 'Modern chat application with AI integration, real-time messaging, and customizable themes.',
-      tech: ['React', 'WebSocket', 'OpenAI', 'Framer Motion'],
-      github: '#',
-      live: '#',
-      image: 'https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=600&h=400&fit=crop'
+      title: 'Air Ticket System',
+      description: 'Air Ticket System is a Java & Spring Boot-based web application for managing airline ticket sales. Users can view flights and purchase tickets, while admins handle flight CRUD operations and approve or cancel purchases. The system includes JWT-based authentication, Swagger UI for API docs, and Docker support for deployment.',
+      tech: ['Java 17', 'Spring Boot', 'PostgreSQL', 'Gradle', 'JWT', 'Swagger UI', 'Lombok', 'Docker'],
+      github: 'https://github.com/Sedmeq/Air_Ticket_System.git',
+      live: 'https://github.com/Sedmeq/Air_Ticket_System.git',
+      image: image_3
     }
   ];
 
